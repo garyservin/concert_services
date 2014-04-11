@@ -5,6 +5,9 @@
     <arg name="turtle_name" default="turtle"/>
     <arg name="turtle_rapp_whitelist" default="[]"/>
     <arg name="turtle_concert_whitelist" default=""/>
+    <arg name="local_remote_controllers_only" default="true"/>
+    <arg name="screen" default="true"/>
+
     <include file="$(find rocon_app_manager)/launch/concert_client.launch">
         <arg name="robot_name" value="$(arg turtle_name)"/>
         <arg name="concert_whitelist" value="$(arg turtle_concert_whitelist)"/>
@@ -13,8 +16,8 @@
 	    <arg name="rapp_package_blacklist" value="[]" />
         <arg name="gateway_watch_loop_period" value="1"/> <!-- flip faster, convenient -->
         <arg name="gateway_firewall" value="false"/>
-        <arg name="local_remote_controllers_only" value="true"/>
-        <arg name="screen" value="true" />
+        <arg name="local_remote_controllers_only" value="$(arg local_remote_controllers_only)"/>
+        <arg name="screen" value="$(arg local_remote_controllers_only)" />
     </include>
     <!-- 
       This has an issue if turtlesim service is renamed
