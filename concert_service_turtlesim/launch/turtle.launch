@@ -12,14 +12,14 @@
         <arg name="robot_name" value="$(arg turtle_name)"/>
         <arg name="concert_whitelist" value="$(arg turtle_concert_whitelist)"/>
         <arg name="robot_type" value="pc"/>
-	    <arg name="rapp_package_whitelist" value="$(arg turtle_rapp_whitelist)" />
-	    <arg name="rapp_package_blacklist" value="[]" />
+        <arg name="rapp_package_whitelist" value="$(arg turtle_rapp_whitelist)" />
+        <arg name="rapp_package_blacklist" value="[]" />
         <arg name="gateway_watch_loop_period" value="1"/> <!-- flip faster, convenient -->
         <arg name="gateway_firewall" value="false"/>
         <arg name="local_remote_controllers_only" value="$(arg local_remote_controllers_only)"/>
-        <arg name="screen" value="$(arg local_remote_controllers_only)" />
+        <arg name="screen" value="$(arg screen)" />
     </include>
-    <!-- 
+    <!--
       This has an issue if turtlesim service is renamed
           https://github.com/robotics-in-concert/rocon_tutorials/issues/31
       Not fixing for now as we will phase this turtle out for turtle2.
